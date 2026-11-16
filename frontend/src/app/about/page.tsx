@@ -5,7 +5,7 @@ export default function About() {
     <div className="bg-background min-h-screen">
       {/* 1. Header Hero */}
       <section className="bg-brand-earth text-white py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(30,63,32,0.25),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(27,67,50,0.25),transparent_40%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">About Us</h1>
           <p className="text-brand-sand/80 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
@@ -34,7 +34,7 @@ export default function About() {
 
           <div className="bg-brand-sand/40 dark:bg-brand-earth/50 p-8 rounded-3xl border border-brand-sand dark:border-brand-sand/15 space-y-6">
             <div className="flex items-start space-x-4">
-              <div className="bg-brand-green/10 p-2.5 rounded-lg text-brand-green dark:text-green-400 mt-1">
+              <div className="bg-brand-green/15 p-2.5 rounded-xl text-brand-green dark:text-brand-green-light border border-brand-green/20 mt-1 shadow-sm">
                 <Award className="h-5 w-5" />
               </div>
               <div>
@@ -45,7 +45,7 @@ export default function About() {
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <div className="bg-brand-green/10 p-2.5 rounded-lg text-brand-green dark:text-green-400 mt-1">
+              <div className="bg-brand-green/15 p-2.5 rounded-xl text-brand-green dark:text-brand-green-light border border-brand-green/20 mt-1 shadow-sm">
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <div>
@@ -61,6 +61,9 @@ export default function About() {
         {/* 3. Our Team Section */}
         <div className="space-y-8 pt-8 border-t border-brand-sand dark:border-brand-sand/15">
           <div className="text-center space-y-3">
+            <span className="text-brand-gold text-xs font-bold uppercase tracking-widest block">
+              Operational Leadership
+            </span>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-earth dark:text-white">
               Our Strength lies in Our Experts
             </h2>
@@ -70,21 +73,21 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-brand-earth/95 p-6 rounded-2xl border border-brand-sand dark:border-brand-sand/15 text-center space-y-3 shadow-sm">
-              <div className="bg-brand-green/10 text-brand-green dark:text-green-400 h-12 w-12 rounded-full flex items-center justify-center mx-auto text-lg font-bold">
+            <div className="bg-white dark:bg-brand-earth/95 p-6 rounded-2xl border border-brand-sand dark:border-brand-sand/15 border-t-2 border-t-brand-green dark:border-t-brand-green-light text-center space-y-3 shadow-sm group">
+              <div className="bg-brand-green/15 text-brand-green dark:text-brand-green-light h-12 w-12 rounded-2xl border border-brand-green/20 flex items-center justify-center mx-auto text-lg font-bold group-hover:scale-105 transition-transform shadow-sm">
                 <Users className="h-5 w-5" />
               </div>
-              <h3 className="font-bold text-brand-earth dark:text-white">Procurement Specialists</h3>
+              <h3 className="font-bold text-brand-earth dark:text-white group-hover:text-brand-green dark:group-hover:text-brand-green-light transition-colors">Procurement Specialists</h3>
               <p className="text-sm text-foreground/75 dark:text-brand-sand/85 leading-relaxed">
                 Directly connected with farmer cooperatives in APMC market yards (specifically Unjha and surrounding regions) to source raw seeds at peak freshness.
               </p>
             </div>
 
-            <div className="bg-white dark:bg-brand-earth/95 p-6 rounded-2xl border border-brand-sand dark:border-brand-sand/15 text-center space-y-3 shadow-sm">
-              <div className="bg-brand-green/10 text-brand-green dark:text-green-400 h-12 w-12 rounded-full flex items-center justify-center mx-auto text-lg font-bold">
+            <div className="bg-white dark:bg-brand-earth/95 p-6 rounded-2xl border border-brand-sand dark:border-brand-sand/15 border-t-2 border-t-brand-green dark:border-t-brand-green-light text-center space-y-3 shadow-sm group">
+              <div className="bg-brand-green/15 text-brand-green dark:text-brand-green-light h-12 w-12 rounded-2xl border border-brand-green/20 flex items-center justify-center mx-auto text-lg font-bold group-hover:scale-105 transition-transform shadow-sm">
                 <Globe className="h-5 w-5" />
               </div>
-              <h3 className="font-bold text-brand-earth dark:text-white">Logistics Operators</h3>
+              <h3 className="font-bold text-brand-earth dark:text-white group-hover:text-brand-green dark:group-hover:text-brand-green-light transition-colors">Logistics Operators</h3>
               <p className="text-sm text-foreground/75 dark:text-brand-sand/85 leading-relaxed">
                 Experts in container logistics, custom clearances at major Indian ports, and international shipping guidelines to ensure hassle-free deliveries.
               </p>

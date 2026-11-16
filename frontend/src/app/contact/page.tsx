@@ -13,7 +13,7 @@ export default function Contact() {
     <div className="bg-background min-h-screen">
       {/* 1. Header Hero */}
       <section className="bg-brand-earth text-white py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(30,63,32,0.25),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(27,67,50,0.25),transparent_40%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">Contact Us</h1>
           <p className="text-brand-sand/80 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
@@ -37,11 +37,11 @@ export default function Contact() {
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-brand-green/10 p-3 rounded-xl text-brand-green mt-0.5 flex-shrink-0">
-                  <MapPin className="h-6 w-6" />
+                <div className="bg-brand-green/15 p-2.5 rounded-xl text-brand-green dark:text-brand-green-light border border-brand-green/20 shadow-sm mt-1">
+                  <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-brand-earth dark:text-brand-gold">Address</h3>
+                  <h3 className="font-bold text-brand-earth dark:text-white">Address</h3>
                   <p className="text-sm text-foreground/75 dark:text-brand-sand/80 leading-relaxed mt-1">
                     {contactDetails.address}
                   </p>
@@ -49,15 +49,15 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="bg-brand-green/10 p-3 rounded-xl text-brand-green mt-0.5 flex-shrink-0">
-                  <Phone className="h-6 w-6" />
+                <div className="bg-brand-green/15 p-2.5 rounded-xl text-brand-green dark:text-brand-green-light border border-brand-green/20 shadow-sm mt-1">
+                  <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-brand-earth dark:text-brand-gold">Call Us</h3>
+                  <h3 className="font-bold text-brand-earth dark:text-white">Call Us</h3>
                   <ul className="text-sm text-foreground/75 dark:text-brand-sand/80 space-y-1 mt-1">
                     {contactDetails.phone.map((ph, idx) => (
                       <li key={idx}>
-                        <a href={`tel:${ph.replace(/\s+/g, "")}`} className="hover:text-brand-green transition-colors">
+                        <a href={`tel:${ph.replace(/\s+/g, "")}`} className="hover:text-brand-green dark:hover:text-brand-green-light transition-colors">
                           {ph}
                         </a>
                       </li>
@@ -67,13 +67,13 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="bg-brand-green/10 p-3 rounded-xl text-brand-green mt-0.5 flex-shrink-0">
-                  <Mail className="h-6 w-6" />
+                <div className="bg-brand-green/15 p-2.5 rounded-xl text-brand-green dark:text-brand-green-light border border-brand-green/20 shadow-sm mt-1">
+                  <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-brand-earth dark:text-brand-gold">Email</h3>
+                  <h3 className="font-bold text-brand-earth dark:text-white">Email</h3>
                   <p className="text-sm mt-1">
-                    <a href={`mailto:${contactDetails.email}`} className="text-brand-green hover:underline">
+                    <a href={`mailto:${contactDetails.email}`} className="text-brand-green dark:text-brand-green-light hover:underline">
                       {contactDetails.email}
                     </a>
                   </p>
@@ -81,11 +81,11 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="bg-brand-green/10 p-3 rounded-xl text-brand-green mt-0.5 flex-shrink-0">
-                  <Clock className="h-6 w-6" />
+                <div className="bg-brand-green/15 p-2.5 rounded-xl text-brand-green dark:text-brand-green-light border border-brand-green/20 shadow-sm mt-1">
+                  <Clock className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-brand-earth dark:text-brand-gold">Business Hours</h3>
+                  <h3 className="font-bold text-brand-earth dark:text-white">Business Hours</h3>
                   <p className="text-sm text-foreground/75 dark:text-brand-sand/80 mt-1">
                     {contactDetails.hours}
                   </p>

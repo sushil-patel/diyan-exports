@@ -82,9 +82,33 @@ export default function Certifications() {
     },
   ];
 
+  const renderCards = () =>
+    certificates.map((cert) => (
+      <button
+        key={cert.id}
+        onClick={() => setActiveCert(cert)}
+        className="flex-shrink-0 w-72 bg-white dark:bg-brand-earth/95 p-6 rounded-2xl border border-brand-sand/70 dark:border-brand-sand/10 hover:border-brand-accent hover:shadow-md hover:scale-[1.01] transition-all text-left flex flex-col justify-between cursor-pointer space-y-4"
+      >
+        <div className="space-y-2">
+          <div className="bg-brand-green/10 text-brand-accent p-2 rounded-xl w-fit">
+            <Award className="h-5 w-5" />
+          </div>
+          <h3 className="font-bold text-lg text-brand-earth dark:text-white whitespace-normal leading-tight">
+            {cert.name}
+          </h3>
+          <p className="text-xs text-brand-gold font-semibold tracking-wide uppercase">
+            {cert.authority.length > 35 ? `${cert.authority.substring(0, 35)}...` : cert.authority}
+          </p>
+        </div>
+        <div className="text-xs text-brand-accent font-bold flex items-center">
+          Click to View Certificate
+        </div>
+      </button>
+    ));
+
   return (
     <section className="py-20 bg-brand-sand/15 overflow-hidden border-t border-b border-brand-sand">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="text-center space-y-3">
@@ -99,45 +123,20 @@ export default function Certifications() {
           </p>
         </div>
 
-        {/* Marquee Wrapper */}
-        <div className="relative w-full flex overflow-x-hidden py-4">
-          <div className="flex space-x-6 animate-marquee whitespace-nowrap min-w-full">
-            {/* Double the list for infinite looping */}
-            {[...certificates, ...certificates].map((cert, index) => (
-              <button
-                key={`${cert.id}-${index}`}
-                onClick={() => setActiveCert(cert)}
-                className="flex-shrink-0 w-72 bg-white dark:bg-brand-earth/95 p-6 rounded-2xl border border-brand-sand/70 dark:border-brand-sand/10 hover:border-brand-green hover:shadow-md hover:scale-[1.01] transition-all text-left flex flex-col justify-between cursor-pointer space-y-4"
-              >
-                <div className="space-y-2">
-                  <div className="bg-brand-green/10 text-brand-green dark:text-green-400 p-2 rounded-xl w-fit">
-                    <Award className="h-5 w-5" />
-                  </div>
-                  <h3 className="font-bold text-lg text-brand-earth dark:text-white whitespace-normal leading-tight">
-                    {cert.name}
-                  </h3>
-                  <p className="text-xs text-brand-gold font-semibold tracking-wide uppercase">
-                    {cert.authority.length > 35 ? `${cert.authority.substring(0, 35)}...` : cert.authority}
-                  </p>
-                </div>
-                <div className="text-xs text-brand-green dark:text-green-400 font-bold flex items-center">
-                  Click to View Certificate
-                </div>
-              </button>
-            ))}
-          </div>
+      </div>
 
-          {/* Gradient Overlays for smooth side fades */}
-          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+      {/* Marquee Wrapper (full-bleed, seamless loop) */}
+      <div className="relative w-full overflow-hidden py-4 mt-12 marquee-group">
+        <div className="flex w-max">
+          <div className="flex space-x-6 pr-6 marquee-track animate-marquee">{renderCards()}</div>
+          <div className="flex space-x-6 pr-6 marquee-track animate-marquee" aria-hidden="true">{renderCards()}</div>
         </div>
-
       </div>
 
       {/* Certificate Modal Overlay */}
       {activeCert && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 sm:p-6 transition-opacity">
-          <div className="relative w-full max-w-2xl bg-[#fdfbf7] rounded-3xl border-4 border-double border-brand-gold/60 p-8 sm:p-12 shadow-2xl text-center space-y-8 flex flex-col justify-between items-center text-brand-earth max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full max-w-2xl bg-brand-sand rounded-3xl border-4 border-double border-brand-gold/60 p-8 sm:p-12 shadow-2xl text-center space-y-8 flex flex-col justify-between items-center text-brand-earth max-h-[90vh] overflow-y-auto">
             
             {/* Close Button */}
             <button
@@ -161,24 +160,24 @@ export default function Certifications() {
             {/* Certificate Document Content */}
             <div className="space-y-6 max-w-lg w-full border-t border-b border-brand-gold/20 py-6">
               <div>
-                <span className="text-xs text-foreground/50 uppercase tracking-wider block">Standard</span>
+                <span className="text-xs text-brand-earth/60 uppercase tracking-wider block">Standard</span>
                 <h3 className="text-2xl font-extrabold tracking-tight text-brand-green">
                   {activeCert.name}
                 </h3>
               </div>
 
               <div>
-                <span className="text-xs text-foreground/50 uppercase tracking-wider block">Issued To</span>
+                <span className="text-xs text-brand-earth/60 uppercase tracking-wider block">Issued To</span>
                 <span className="text-xl font-extrabold tracking-tight text-brand-earth">
                   DIYAN EXPORTS
                 </span>
-                <p className="text-xs text-foreground/60 mt-1">
+                <p className="text-xs text-brand-earth/70 mt-1">
                   Mehsana Office, Gujarat, India.
                 </p>
               </div>
 
               <div>
-                <span className="text-xs text-foreground/50 uppercase tracking-wider block">Scope of Certification</span>
+                <span className="text-xs text-brand-earth/60 uppercase tracking-wider block">Scope of Certification</span>
                 <p className="text-sm text-brand-earth/90 leading-relaxed font-medium mt-1">
                   {activeCert.scope}
                 </p>
@@ -186,11 +185,11 @@ export default function Certifications() {
 
               <div className="grid grid-cols-2 gap-4 text-left bg-brand-sand/35 p-4 rounded-xl border border-brand-gold/10">
                 <div>
-                  <span className="text-[10px] text-foreground/50 uppercase tracking-wider block">Cert Number</span>
+                  <span className="text-[10px] text-brand-earth/60 uppercase tracking-wider block">Cert Number</span>
                   <span className="text-xs font-bold text-brand-earth">{activeCert.certNumber}</span>
                 </div>
                 <div>
-                  <span className="text-[10px] text-foreground/50 uppercase tracking-wider block">Valid Until</span>
+                  <span className="text-[10px] text-brand-earth/60 uppercase tracking-wider block">Valid Until</span>
                   <span className="text-xs font-bold text-brand-earth">{activeCert.validUntil}</span>
                 </div>
               </div>
@@ -201,7 +200,7 @@ export default function Certifications() {
               <div className="text-left space-y-1">
                 <div className="font-serif italic text-sm text-brand-earth/70">Diyan Quality Board</div>
                 <div className="h-0.5 w-24 bg-brand-earth/30" />
-                <div className="text-[10px] uppercase text-foreground/50 tracking-wider">Authorized Signature</div>
+                <div className="text-[10px] uppercase text-brand-earth/60 tracking-wider">Authorized Signature</div>
               </div>
               
               <div className="flex flex-col items-center">

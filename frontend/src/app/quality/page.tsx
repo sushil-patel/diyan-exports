@@ -13,7 +13,7 @@ export default function Quality() {
     <div className="bg-background min-h-screen">
       {/* 1. Header Hero */}
       <section className="bg-brand-earth text-white py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(194,138,0,0.2),transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(184,134,11,0.2),transparent_45%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">Quality Policy</h1>
           <p className="text-brand-sand/80 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
@@ -46,10 +46,10 @@ export default function Quality() {
           <div className="bg-brand-sand/40 dark:bg-brand-earth/50 p-8 rounded-3xl border border-brand-sand dark:border-brand-sand/15 space-y-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="bg-brand-green/10 p-2 rounded-lg text-brand-green">
+                <div className="bg-brand-green/15 p-2.5 rounded-xl text-brand-green dark:text-brand-green-light border border-brand-green/20 shadow-sm mt-1">
                   <Eye className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-brand-earth dark:text-brand-gold uppercase tracking-wider">
+                <h3 className="text-lg font-bold text-brand-earth dark:text-white uppercase tracking-wider">
                   Our Vision
                 </h3>
               </div>
@@ -60,10 +60,10 @@ export default function Quality() {
 
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="bg-brand-green/10 p-2 rounded-lg text-brand-green">
+                <div className="bg-brand-green/15 p-2.5 rounded-xl text-brand-green dark:text-brand-green-light border border-brand-green/20 shadow-sm mt-1">
                   <Compass className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-brand-earth dark:text-brand-gold uppercase tracking-wider">
+                <h3 className="text-lg font-bold text-brand-earth dark:text-white uppercase tracking-wider">
                   Our Mission
                 </h3>
               </div>

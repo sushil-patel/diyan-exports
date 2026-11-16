@@ -1,13 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, Wheat } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -18,7 +23,7 @@ export default function Navbar() {
     { name: "Contact Us", href: "/contact" },
   ];
 
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path: string) => mounted && pathname === path;
 
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-brand-sand dark:border-brand-sand/10">
@@ -40,9 +45,9 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`font-medium text-sm transition-colors hover:text-brand-green dark:hover:text-green-400 ${
+                className={`font-medium text-sm transition-colors hover:text-brand-accent ${
                   isActive(link.href)
-                    ? "text-brand-green dark:text-green-400 font-semibold"
+                    ? "text-brand-accent font-semibold"
                     : "text-foreground/75"
                 }`}
               >
@@ -82,8 +87,8 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className={`block px-3 py-3 rounded-lg text-base font-medium ${
                   isActive(link.href)
-                    ? "bg-brand-sand dark:bg-brand-earth text-brand-green dark:text-green-400 font-semibold"
-                    : "text-foreground/75 hover:bg-brand-sand dark:hover:bg-brand-earth hover:text-brand-green dark:hover:text-green-400"
+                    ? "bg-brand-sand dark:bg-brand-earth text-brand-accent font-semibold"
+                    : "text-foreground/75 hover:bg-brand-sand dark:hover:bg-brand-earth hover:text-brand-accent"
                 }`}
               >
                 {link.name}

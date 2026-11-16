@@ -1,17 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fdfcf9; /* Sand / Warm off-white */
-  --foreground: #1c1917; /* Slate dark stone */
+  --background: #faf7f2; /* Warm cream */
+  --foreground: #181614; /* Deep stone */
+  --brand-accent: #1b4332; /* Accent adapts per color scheme */
 }
 
 @theme {
-  /* Dynamic Agricultural Theme Colors */
-  --color-brand-green: #1e3f20;  /* Deep Forest Green */
-  --color-brand-gold: #c28a00;   /* Warm Gold */
-  --color-brand-spice: #a64b2a;  /* Spice Red/Terra Cotta */
-  --color-brand-earth: #2c2520;  /* Earthy Dark Brown */
-  --color-brand-sand: #f4f1ea;   /* Warm Sand Accent */
+  /* Refined Earthy Premium palette */
+  --color-brand-green: #1b4332;  /* Deeper forest green */
+  --color-brand-gold: #b8860b;   /* Rich dark goldenrod */
+  --color-brand-spice: #a0522d;  /* Warm sienna */
+  --color-brand-earth: #26221e;  /* Soft dark brown */
+  --color-brand-sand: #f1e9db;   /* Muted warm sand */
+  --color-brand-green-light: #74c69d; /* Dark-mode green accent */
+  --color-brand-spice-light: #e59a76; /* Dark-mode spice accent */
+  --color-brand-gold-light: #e6b85c;  /* Dark-mode gold accent */
+  --color-brand-accent: var(--brand-accent); /* Light/dark aware accent for text & links */
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -33,8 +38,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #11100f;
-    --foreground: #f4f3f2;
+    --background: #131110;
+    --foreground: #f5f2ec;
+    --brand-accent: #74c69d;
   }
 }
 
@@ -44,6 +50,11 @@ body {
   font-family: var(--font-sans), sans-serif;
   margin: 0;
   padding: 0;
+}
+
+/* Pause the certifications marquee on hover */
+.marquee-group:hover .marquee-track {
+  animation-play-state: paused;
 }
 
 /* Custom hide scrollbar utility */

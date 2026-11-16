@@ -56,7 +56,7 @@ export default async function ProductDetailPage({ params }: Props) {
     <div className="bg-background min-h-screen">
       {/* Header Hero */}
       <section className="bg-brand-earth text-white py-12 sm:py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(30,63,32,0.25),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(27,67,50,0.25),transparent_40%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           <Link
             href={`/products/${categorySlug}`}
@@ -87,7 +87,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
             <div className="p-6 bg-brand-sand/30 dark:bg-brand-earth/50 rounded-2xl border border-brand-sand dark:border-brand-sand/15 space-y-4">
               <h3 className="font-bold text-brand-earth dark:text-white flex items-center space-x-2">
-                <CheckCircle2 className="h-5 w-5 text-brand-green dark:text-green-400" />
+                <CheckCircle2 className="h-5 w-5 text-brand-green dark:text-brand-green-light" />
                 <span>Export Packaging Options</span>
               </h3>
               <p className="text-xs text-foreground/70 dark:text-brand-sand/80 leading-relaxed">
@@ -135,7 +135,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
             {/* Quick Contact CTA */}
             <div className="bg-brand-earth text-white p-6 rounded-2xl space-y-4 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(30,63,32,0.4),transparent_50%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(27,67,50,0.4),transparent_50%)]" />
               <h3 className="font-bold relative z-10">Request Sample or Quote</h3>
               <p className="text-xs text-brand-sand/80 leading-relaxed relative z-10">
                 Interested in bulk orders of {product.name}? Submit an enquiry specifying requirements and target port.

@@ -60,6 +60,9 @@ function EnquiryForm() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Basic ${btoa(
+            `${process.env.NEXT_PUBLIC_ENQUIRY_USERNAME}:${process.env.NEXT_PUBLIC_ENQUIRY_PASSWORD}`
+          )}`,
         },
         body: JSON.stringify(formData),
       });
@@ -92,7 +95,7 @@ function EnquiryForm() {
 
       {/* Success Notification */}
       {success && (
-        <div className="flex items-start space-x-3 bg-brand-green/10 dark:bg-green-950/40 border border-brand-green/20 dark:border-green-900/30 text-brand-green dark:text-green-300 p-4 rounded-xl">
+        <div className="flex items-start space-x-3 bg-brand-green/10 dark:bg-brand-green/15 border border-brand-green/20 dark:border-brand-green/25 text-brand-green dark:text-brand-green-light p-4 rounded-xl">
           <CheckCircle2 className="h-5 w-5 mt-0.5 flex-shrink-0" />
           <div>
             <h4 className="font-bold">Enquiry Submitted Successfully!</h4>
@@ -105,7 +108,7 @@ function EnquiryForm() {
 
       {/* General Server Error Notification */}
       {serverError && (
-        <div className="flex items-start space-x-3 bg-brand-spice/10 dark:bg-orange-950/20 border border-brand-spice/20 dark:border-orange-900/20 text-brand-spice dark:text-orange-300 p-4 rounded-xl">
+        <div className="flex items-start space-x-3 bg-brand-spice/10 dark:bg-brand-spice/15 border border-brand-spice/20 dark:border-brand-spice/25 text-brand-spice dark:text-brand-spice-light p-4 rounded-xl">
           <AlertCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
           <div>
             <h4 className="font-bold">Submission Failed</h4>
@@ -251,7 +254,7 @@ export default function EnquiryPage() {
     <div className="bg-background min-h-screen">
       {/* Header Hero */}
       <section className="bg-brand-earth text-white py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(30,63,32,0.25),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(27,67,50,0.25),transparent_40%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">Send an Enquiry</h1>
           <p className="text-brand-sand/80 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
